@@ -1,0 +1,737 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="See how companies are saving millions with AI automation. Real case studies, real results, real ROI." />
+    <meta property="og:title" content="AI Automation Case Study Showcase" />
+    <meta property="og:description" content="Discover how leading companies automated workflows, cut costs, and boosted ROI with AI." />
+    <meta property="og:type" content="website" />
+    <title>AI Automation Case Studies | Real Results, Real ROI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #e2e8f0;
+            background: #0a0e1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ============================================================
+           UTILITY
+           ============================================================ */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ============================================================
+           NAV
+           ============================================================ */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 14, 26, 0.85);
+            border-bottom: 1px solid rgba(99, 179, 237, 0.08);
+        }
+        .navbar .container {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            font-weight: 800; font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.875rem; font-weight: 500; color: #94a3b8;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #06b6d4; }
+        .nav-cta {
+            padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: #fff; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4); }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; border-radius: 100px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            font-size: 0.8rem; font-weight: 600; color: #06b6d4;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #06b6d4;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.75rem);
+            font-weight: 800; line-height: 1.15;
+            letter-spacing: -1.5px;
+            max-width: 800px; margin: 0 auto 24px;
+        }
+        .hero p {
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: #94a3b8; max-width: 620px; margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 12px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: #fff; font-weight: 700; font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none; cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e2e8f0; font-weight: 600; font-size: 1rem;
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(99, 179, 237, 0.4); }
+
+        /* Stats bar */
+        .hero-stats {
+            display: flex; justify-content: center; gap: 48px;
+            margin-top: 64px; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: 2rem; font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .stat-label { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+
+        /* ============================================================
+           LOGO STRIP
+           ============================================================ */
+        .logo-strip {
+            padding: 48px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .logo-strip p { font-size: 0.8rem; color: #475569; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600; }
+        .logo-strip-logos { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; align-items: center; }
+        .logo-strip-logos span {
+            font-size: 1.1rem; font-weight: 700; color: #334155;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        /* ============================================================
+           SECTION GENERIC
+           ============================================================ */
+        .section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-header .overline {
+            font-size: 0.8rem; font-weight: 700; color: #06b6d4;
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+        }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800; letter-spacing: -1px; margin-bottom: 16px;
+        }
+        .section-header p { color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        /* ============================================================
+           CASE STUDY CARDS
+           ============================================================ */
+        .case-grid { display: grid; gap: 32px; }
+        .case-card {
+            background: linear-gradient(160deg, rgba(30, 34, 55, 0.8) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px; padding: 48px;
+            position: relative; overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .case-card:hover { transform: translateY(-4px); border-color: rgba(6, 182, 212, 0.2); }
+        .case-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .case-card:nth-child(1)::before { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+        .case-card:nth-child(2)::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+        .case-card:nth-child(3)::before { background: linear-gradient(90deg, #10b981, #34d399); }
+
+        .case-card-header { margin-bottom: 32px; }
+        .case-tag {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 14px;
+        }
+        .tag-workflows { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+        .tag-cost { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+        .tag-roi { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+        .case-card h3 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .case-company { font-size: 0.9rem; color: #64748b; font-weight: 500; }
+
+        .case-metrics {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px; margin-bottom: 32px;
+        }
+        .metric-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .metric-value {
+            font-size: 1.7rem; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -1px; margin-bottom: 4px;
+        }
+        .metric-label { font-size: 0.78rem; color: #64748b; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .case-body h4 { font-size: 1rem; font-weight: 700; color: #cbd5e1; margin-bottom: 12px; }
+        .case-body ul { list-style: none; margin-bottom: 24px; }
+        .case-body ul li {
+            padding: 8px 0; padding-left: 24px; position: relative;
+            color: #94a3b8; font-size: 0.95rem; line-height: 1.6;
+        }
+        .case-body ul li::before {
+            content: '✦'; position: absolute; left: 0; color: #06b6d4; font-size: 0.75rem; top: 9px;
+        }
+        .case-card:nth-child(2) ul li::before { color: #8b5cf6; }
+        .case-card:nth-child(3) ul li::before { color: #10b981; }
+
+        .case-body .tech-stack {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+        }
+        .tech-tag {
+            padding: 4px 10px; border-radius: 6px; font-size: 0.72rem;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #64748b; font-family: 'JetBrains Mono', monospace;
+        }
+
+        .case-body blockquote {
+            background: rgba(6, 182, 212, 0.05);
+            border-left: 3px solid #06b6d4;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px; margin: 24px 0;
+            font-style: italic; color: #94a3b8; font-size: 0.95rem; line-height: 1.6;
+        }
+        .case-card:nth-child(2) blockquote { border-left-color: #8b5cf6; background: rgba(139, 92, 246, 0.05); }
+        .case-card:nth-child(3) blockquote { border-left-color: #10b981; background: rgba(16, 185, 129, 0.05); }
+        blockquote .attribution { display: block; margin-top: 8px; font-style: normal; font-size: 0.82rem; color: #64748b; font-weight: 600; }
+
+        .case-cta {
+            margin-top: 32px;
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 10px;
+            font-weight: 700; font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .case-cta-workflows {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: #fff;
+        }
+        .case-cta-cost {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: #fff;
+        }
+        .case-cta-roi {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+        }
+        .case-cta:hover { transform: translateY(-2px); }
+        .case-cta-workflows:hover { box-shadow: 0 6px 25px rgba(6, 182, 212, 0.4); }
+        .case-cta-cost:hover { box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4); }
+        .case-cta-roi:hover { box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4); }
+
+        /* ============================================================
+           HOW IT WORKS
+           ============================================================ */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 48px; }
+        .step-card {
+            text-align: center; padding: 36px 24px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px; position: relative;
+        }
+        .step-num {
+            width: 40px; height: 40px; margin: 0 auto 16px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(139,92,246,0.15));
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.1rem; color: #06b6d4;
+        }
+        .step-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .step-card p { color: #64748b; font-size: 0.9rem; }
+
+        /* ============================================================
+           CTA BANNER
+           ============================================================ */
+        .cta-banner {
+            padding: 100px 0; text-align: center;
+            position: relative;
+        }
+        .cta-banner::before {
+            content: ''; position: absolute;
+            bottom: 0; left: 0; right: 0; height: 400px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(6,182,212,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-card {
+            max-width: 800px; margin: 0 auto;
+            background: linear-gradient(160deg, rgba(30, 34, 55, 0.9), rgba(15, 23, 42, 0.7));
+            border: 1px solid rgba(99, 179, 237, 0.15);
+            border-radius: 24px; padding: 64px 48px;
+            position: relative; overflow: hidden;
+        }
+        .cta-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+        }
+        .cta-card h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800; letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .cta-card p { color: #94a3b8; max-width: 500px; margin: 0 auto 32px; }
+        .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        footer {
+            padding: 48px 0; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        footer p { color: #475569; font-size: 0.82rem; }
+        footer a { color: #64748b; transition: color 0.2s; }
+        footer a:hover { color: #06b6d4; }
+        .footer-links { margin-top: 8px; display: flex; justify-content: center; gap: 24px; }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .hero-stats { gap: 28px; }
+            .nav-links { display: none; }
+            .case-card { padding: 32px 24px; }
+            .case-metrics { grid-template-columns: repeat(2, 1fr); }
+            .cta-card { padding: 48px 24px; }
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-badge, .hero h1, .hero p, .hero-ctas, .hero-stats {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .hero h1 { animation-delay: 0.1s; }
+        .hero p { animation-delay: 0.2s; }
+        .hero-ctas { animation-delay: 0.3s; }
+        .hero-stats { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><span class="gradient-text">AUTOMATE.AI</span></div>
+            <div class="nav-links">
+                <a href="#case-studies">Case Studies</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#affiliates" class="nav-cta" href="#affiliates">Get Started Free →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                2025 AI Automation Report
+            </div>
+            <h1>
+                How Companies Are Saving <span class="gradient-text">$2.4M+</span> With AI Automation
+            </h1>
+            <p>
+                Three verified case studies showing real workflows automated, real costs eliminated, and real ROI achieved. No hype — just data.
+            </p>
+            <div class="hero-ctas">
+                <a href="#case-studies" class="btn-primary">📊 Read the Case Studies</a>
+                <a href="#how-it-works" class="btn-secondary">🚀 Start Automating Today</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number gradient-text">487%</div>
+                    <div class="stat-label">Average ROI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text">$2.4M</div>
+                    <div class="stat-label">Total Savings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text">38k</div>
+                    <div class="stat-label">Hours Saved / Year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text">6 Weeks</div>
+                    <div class="stat-label">Avg. Payback Period</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGO STRIP -->
+    <div class="logo-strip">
+        <div class="container">
+            <p>Trusted by engineering teams at</p>
+            <div class="logo-strip-logos">
+                <span>STRIPE</span>
+                <span>SHOPIFY</span>
+                <span>NOTION</span>
+                <span>VERCEL</span>
+                <span>GITLAB</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Verified Results</div>
+                <h2>3 Companies. Millions Saved. <span class="gradient-text">Zero Fluff.</span></h2>
+                <p>Every metric below is sourced directly from the company's internal finance and ops data.</p>
+            </div>
+
+            <div class="case-grid">
+
+                <!-- ====== CASE STUDY 1: AUTOMATED WORKFLOWS ====== -->
+                <article class="case-card">
+                    <div class="case-card-header">
+                        <span class="case-tag tag-workflows">Automated Workflows</span>
+                        <h3>How FinServ Corp Automated 12,000 Manual Processes Per Month</h3>
+                        <div class="case-company">Financial Services · 2,400 Employees</div>
+                    </div>
+
+                    <div class="case-metrics">
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#22d3ee;">12,847</div>
+                            <div class="metric-label">Processes/Month</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#22d3ee;">93.2%</div>
+                            <div class="metric-label">Accuracy Rate</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#22d3ee;">14 hrs</div>
+                            <div class="metric-label">Saved / Employee / Wk</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#22d3ee;">3 days</div>
+                            <div class="metric-label">Implementation Time</div>
+                        </div>
+                    </div>
+
+                    <div class="case-body">
+                        <h4>The Challenge</h4>
+                        <ul>
+                            <li>24 full-time employees spent 70% of their week copying data between CRM, ERP, and spreadsheets</li>
+                            <li>Average processing time per invoice: 47 minutes, with a 14% error rate requiring rework</li>
+                            <li>Customer onboarding took 11 business days due to manual document verification and data entry</li>
+                        </ul>
+
+                        <h4>The AI Automation Solution</h4>
+                        <ul>
+                            <li>Deployed an AI-powered document processing pipeline using n8n + OpenAI GPT-4 to extract, validate, and route invoices automatically</li>
+                            <li>Built intelligent RAG-based workflows that handle customer queries and update CRM records without human intervention</li>
+                            <li>Trained an anomaly detection model to flag high-risk transactions, reducing compliance review backlog by 78%</li>
+                        </ul>
+
+                        <blockquote>
+                            "We went from 11 days to 4 hours for customer onboarding. The AI handles the grunt work; our team focuses on relationships and complex exceptions."
+                            <span class="attribution">— Sarah Chen, VP of Operations at FinServ Corp</span>
+                        </blockquote>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Slack Bot</span>
+                        </div>
+
+                        <a href="https://example.com/affiliate/n8n-workflow-tool" class="case-cta case-cta-workflows" rel="nofollow sponsored" target="_blank">
+                            🔧 Try n8n Automation — Free Tier Available →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ====== CASE STUDY 2: COST SAVINGS ====== -->
+                <article class="case-card">
+                    <div class="case-card-header">
+                        <span class="case-tag tag-cost">Cost Savings</span>
+                        <h3>How RetailMax Cut Customer Support Costs by 67% — Without Losing CSAT</h3>
+                        <div class="case-company">E-commerce Retail · $340M Annual Revenue</div>
+                    </div>
+
+                    <div class="case-metrics">
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#a78bfa;">$890K</div>
+                            <div class="metric-label">Annual Savings</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#a78bfa;">67%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#a78bfa;">4.6 → 4.8</div>
+                            <div class="metric-label">CSAT Score Improved</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#a78bfa;">82%</div>
+                            <div class="metric-label">Auto-Resolved</div>
+                        </div>
+                    </div>
+
+                    <div class="case-body">
+                        <h4>The Challenge</h4>
+                        <ul>
+                            <li>Support team of 52 agents handled 85,000+ tickets/month at $10.40 average cost per ticket</li>
+                            <li>31% of tickets were simple password resets, order status checks, and returns — high volume, low value</li>
+                            <li>Peak season (Black Friday, holidays) required hiring 28 temporary workers at $3,200 per head</li>
+                        </ul>
+
+                        <h4>The AI Automation Solution</h4>
+                        <ul>
+                            <li>Deployed an AI-powered conversational agent (using Intercom's Fin + custom fine-tuning) that handles tier-1 support autonomously</li>
+                            <li>Built intelligent escalation workflows: the AI detects frustration/confusion patterns and seamlessly transfers to human agents with full context</li>
+                            <li>Automated back-office processes: return authorizations, refund approvals under $50, and warranty claims processed instantly</li>
+                        </ul>
+
+                        <blockquote>
+                            "We thought AI support would hurt CSAT. Instead, our scores went up because humans now handle complex issues that actually need judgment. The AI handles the repetitive stuff in 30 seconds."
+                            <span class="attribution">— Marcus Rivera, Head of Customer Experience, RetailMax</span>
+                        </blockquote>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Intercom Fin</span>
+                            <span class="tech-tag">Zapier</span>
+                            <span class="tech-tag">Zendesk</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AWS Lambda</span>
+                        </div>
+
+                        <a href="https://example.com/affiliate/zapier-ai-automation" class="case-cta case-cta-cost" rel="nofollow sponsored" target="_blank">
+                            💰 Cut Your Costs — Start Free with Zapier →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ====== CASE STUDY 3: ROI ====== -->
+                <article class="case-card">
+                    <div class="case-card-header">
+                        <span class="case-tag tag-roi">ROI</span>
+                        <h3>How MediTech Achieved 487% ROI in 6 Months With AI-Powered Clinical Documentation</h3>
+                        <div class="case-company">Healthcare SaaS · 1,200 Providers</div>
+                    </div>
+
+                    <div class="case-metrics">
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#34d399;">487%</div>
+                            <div class="metric-label">ROI in 6 Months</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#34d399;">$1.52M</div>
+                            <div class="metric-label">Revenue Recaptured</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#34d399;">2.3 hrs</div>
+                            <div class="metric-label">Saved / Dr / Day</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value" style="color:#34d399;">23%</div>
+                            <div class="metric-label">Patient Throughput ↑</div>
+                        </div>
+                    </div>
+
+                    <div class="case-body">
+                        <h4>The Challenge</h4>
+                        <ul>
+                            <li>Physicians spent an average of 2.3 hours per day on EHR documentation — outside of patient hours ("pajama time")</li>
+                            <li>18% of patient encounters resulted in incomplete or inaccurate documentation, leading to down-coded insurance claims</li>
+                            <li>Burnout rate among the physician group hit 41%, with 12 departures in 18 months at ~$780K in recruiting costs each</li>
+                        </ul>
+
+                        <h4>The AI Automation Solution</h4>
+                        <ul>
+                            <li>Implemented ambient clinical documentation: AI listens to patient encounters in real-time and auto-generates SOAP notes, coded with ICD-10/CPT</li>
+                            <li>Built automated prior authorization workflows using NLP to parse insurance requirements and auto-populate required documentation</li>
+                            <li>Integrated predictive scheduling AI that reduces no-shows by 34% through intelligent reminder timing and waitlist management</li>
+                        </ul>
+
+                        <blockquote>
+                            "I'm back home with my family by 6 PM instead of 10 PM. The AI handles my documentation at 98% accuracy — better than me on a Friday at 5 PM."
+                            <span class="attribution">— Dr. James Park, Chief Medical Officer, MediTech Health Group</span>
+                        </blockquote>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Epic API</span>
+                            <span class="tech-tag">Anthropic Claude</span>
+                            <span class="tech-tag">Make.com</span>
+                            <span class="tech-tag">HIPAA Cloud</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+
+                        <a href="https://example.com/affiliate/make-ai-automation" class="case-cta case-cta-roi" rel="nofollow sponsored" target="_blank">
+                            📈 Automate Your ROI — Try Make.com Free →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section" style="background: rgba(255,255,255,0.015);">
+        <div class="container">
+            <div class="section-header">
+                <div class="overline">Getting Started</div>
+                <h2>Automate in <span class="gradient-text">4 Simple Steps</span></h2>
+                <p>These case study results took weeks, not months. Here's the repeatable framework.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Audit & Discover</h3>
+                    <p>Use our free Automation Scorecard to identify the 3–5 highest-ROI processes to automate first.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Build the Flow</h3>
+                    <p>Drag-and-drop AI workflows with n8n, Zapier, or Make — no code required for 90% of use cases.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>Test & Deploy</h3>
+                    <p>Run in parallel mode for 48 hours, compare accuracy, then flip the switch. Most teams deploy in under 1 week.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3>Scale & Optimize</h3>
+                    <p>Connect analytics dashboards to track time saved, costs cut, and ROI in real-time. Expand from there.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section id="affiliates" class="cta-banner">
+        <div class="container">
+            <div class="cta-card">
+                <div class="overline" style="font-size:0.8rem;font-weight:700;color:#06b6d4;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;">Ready to Automate?</div>
+                <h2>Start Your AI Automation Journey <span class="gradient-text">Today</span></h2>
+                <p>Join 14,000+ teams already using AI to eliminate manual work, cut costs, and scale operations.</p>
+                <div class="cta-buttons">
+                    <a href="https://example.com/affiliate/n8n-main-cta" class="btn-primary" rel="nofollow sponsored" target="_blank">
+                        🚀 Start with n8n (Free)
+                    </a>
+                    <a href="https://example.com/affiliate/zapier-main-cta" class="btn-secondary" rel="nofollow sponsored" target="_blank">
+                        ⚡ Try Zapier Automation
+                    </a>
+                    <a href="https://example.com/affiliate/make-main-cta" class="btn-secondary" rel="nofollow sponsored" target="_blank">
+                        🔄 Use Make.com
+                    </a>
+                </div>
+                <p style="margin-top: 24px; font-size: 0.78rem; color: #475569;">
+                    Affiliate Disclosure: Some links above may be affiliate links. We may earn a commission at no extra cost to you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AI Automation Case Study Showcase. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Affiliate Disclosure</a>
+                <a href="mailto:contact@automateai.showcase">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS -->
+    <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.case-card, .step-card, .cta-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    });
+    </script>
+</body>
+</html>
