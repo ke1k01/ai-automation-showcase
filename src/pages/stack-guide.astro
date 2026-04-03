@@ -1,0 +1,657 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="The complete 5-layer AI automation stack for 2026. Tools, workflows, templates, and pricing to build a self-running business." />
+    <meta property="og:title" content="The Ultimate AI Automation Stack Guide 2026" />
+    <meta property="og:description" content="Complete guide to the tools, workflows, and strategies that let one person do the work of an entire team." />
+    <meta property="og:type" content="article" />
+    <title>The Ultimate AI Automation Stack Guide 2026 | AUTOMATE.AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #e2e8f0;
+            background: #0a0e1a;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* NAV */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 14, 26, 0.85);
+            border-bottom: 1px solid rgba(99, 179, 237, 0.08);
+        }
+        .navbar .container {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.875rem; font-weight: 500; color: #94a3b8;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #06b6d4; }
+        .nav-back {
+            padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #e2e8f0; transition: background 0.2s;
+        }
+        .nav-back:hover { background: rgba(255,255,255,0.12); }
+
+        /* ARTICLE */
+        .article-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        .article-hero::before {
+            content: '';
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .article-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; border-radius: 100px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            font-size: 0.8rem; font-weight: 600; color: #06b6d4;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 900; line-height: 1.15;
+            letter-spacing: -1.5px;
+            max-width: 800px; margin: 0 auto 20px;
+        }
+        .article-hero .subtitle {
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            color: #94a3b8; max-width: 600px; margin: 0 auto 24px;
+        }
+        .article-meta {
+            font-size: 0.85rem; color: #64748b;
+        }
+
+        /* TABLE OF CONTENTS */
+        .toc {
+            background: linear-gradient(160deg, rgba(30, 34, 55, 0.8), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px; padding: 32px 40px;
+            margin: 0 auto 60px; max-width: 700px;
+        }
+        .toc h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #06b6d4; margin-bottom: 16px; font-weight: 700; }
+        .toc ol { list-style: none; counter-reset: toc; }
+        .toc ol li { counter-increment: toc; padding: 8px 0; }
+        .toc ol li::before {
+            content: counter(toc, decimal-leading-zero) ".";
+            color: #06b6d4; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem; margin-right: 12px;
+        }
+        .toc ol li a { color: #94a3b8; font-size: 0.95rem; transition: color 0.2s; }
+        .toc ol li a:hover { color: #e2e8f0; }
+
+        /* SECTIONS */
+        .guide-section {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .guide-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 800; letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        .guide-section h3 {
+            font-size: 1.3rem; font-weight: 700;
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .guide-section h4 {
+            font-size: 1.05rem; font-weight: 600;
+            margin-top: 28px; margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+        .guide-section p { color: #94a3b8; margin-bottom: 16px; font-size: 1.02rem; }
+        .guide-section ul, .guide-section ol { color: #94a3b8; margin-bottom: 16px; padding-left: 24px; }
+        .guide-section li { margin-bottom: 8px; }
+
+        /* TABLES */
+        .guide-table {
+            width: 100%; margin: 24px 0;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .guide-table thead {
+            background: rgba(6, 182, 212, 0.08);
+        }
+        .guide-table th {
+            padding: 14px 16px; text-align: left;
+            font-weight: 700; color: #e2e8f0;
+            border-bottom: 2px solid rgba(6, 182, 212, 0.15);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .guide-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: #94a3b8;
+        }
+        .guide-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+        .guide-table code {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 2px 6px; border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem; color: #22d3ee;
+        }
+
+        /* CODE BLOCKS */
+        pre {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; padding: 24px;
+            overflow-x: auto; margin: 20px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88rem; line-height: 1.7;
+            color: #a5f3fc;
+        }
+        code {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 2px 8px; border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem; color: #22d3ee;
+        }
+
+        /* BLOCKQUOTE */
+        blockquote {
+            background: rgba(6, 182, 212, 0.05);
+            border-left: 3px solid #06b6d4;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px; margin: 24px 0;
+            font-style: italic; color: #94a3b8;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            background: linear-gradient(160deg, rgba(6, 182, 212, 0.08), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(6, 182, 212, 0.15);
+            border-radius: 16px; padding: 32px;
+            margin: 32px 0;
+        }
+        .callout h4 {
+            margin-top: 0 !important;
+            color: #06b6d4 !important;
+        }
+        .callout ul {
+            margin-bottom: 0;
+        }
+
+        /* STACK CARD */
+        .stack-card {
+            background: linear-gradient(160deg, rgba(30, 34, 55, 0.8), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px; padding: 40px;
+            margin: 28px 0; position: relative; overflow: hidden;
+        }
+        .stack-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        }
+        .stack-card.solopreneur::before { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+        .stack-card.business::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+        .stack-card.enterprise::before { background: linear-gradient(90deg, #10b981, #34d399); }
+
+        .stack-card h3 {
+            margin-top: 0 !important;
+            font-size: 1.3rem;
+        }
+        .stack-card .price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .stack-card.solopreneur .price { color: #22d3ee; }
+        .stack-card.business .price { color: #a78bfa; }
+        .stack-card.enterprise .price { color: #34d399; }
+        .stack-tool {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .stack-tool .emoji { font-size: 1.2rem; }
+        .stack-tool .tool-name { font-weight: 600; color: #e2e8f0; }
+        .stack-tool .tool-detail { font-size: 0.85rem; color: #64748b; }
+
+        /* CTA */
+        .guide-cta {
+            text-align: center; padding: 80px 0;
+        }
+        .cta-inner {
+            background: linear-gradient(160deg, rgba(30, 34, 55, 0.9), rgba(15, 23, 42, 0.7));
+            border: 1px solid rgba(99, 179, 237, 0.15);
+            border-radius: 24px; padding: 64px 48px;
+            position: relative; overflow: hidden;
+        }
+        .cta-inner::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+        }
+        .cta-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .cta-inner p { color: #94a3b8; margin-bottom: 28px; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 12px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: #fff; font-weight: 700; font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4); }
+
+        /* FOOTER */
+        footer {
+            padding: 48px 0; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        footer p { color: #475569; font-size: 0.82rem; }
+        footer a { color: #64748b; transition: color 0.2s; }
+        footer a:hover { color: #06b6d4; }
+
+        .table-wrap { overflow-x: auto; margin: 20px 0; }
+
+        @media (max-width: 768px) {
+            .toc { padding: 24px 20px; }
+            .stack-card { padding: 24px; }
+            .cta-inner { padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo"><span class="gradient-text">AUTOMATE.AI</span></a>
+        <div class="nav-links">
+            <a href="/">Case Studies</a>
+            <a href="/stack-guide">Stack Guide</a>
+            <a href="/" class="nav-back">← Back to Home</a>
+        </div>
+    </div>
+</nav>
+
+<header class="article-hero">
+    <div class="container">
+        <div class="article-badge">
+            <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#06b6d4;"></span>
+            Updated April 2026
+        </div>
+        <h1>The Ultimate <span class="gradient-text">AI Automation Stack</span> Guide</h1>
+        <p class="subtitle">Build a self-running business with the complete 5-layer tool stack — from AI agents to analytics.</p>
+        <div class="article-meta">20 min read · 5 layers · 30+ tools evaluated</div>
+    </div>
+</header>
+
+<main class="container">
+
+<!-- TOC -->
+<nav class="toc">
+    <h3>Table of Contents</h3>
+    <ol>
+        <li><a href="#what-is">What Is an AI Automation Stack?</a></li>
+        <li><a href="#5-layer">The 5-Layer AI Automation Stack</a></li>
+        <li><a href="#layer1">Layer 1: AI Assistants & Agents</a></li>
+        <li><a href="#layer2">Layer 2: Workflow Orchestration</a></li>
+        <li><a href="#layer3">Layer 3: Data & Knowledge Management</a></li>
+        <li><a href="#layer4">Layer 4: Content Creation & Marketing</a></li>
+        <li><a href="#layer5">Layer 5: Analytics & Optimization</a></li>
+        <li><a href="#templates">Pre-Built Stack Templates</a></li>
+        <li><a href="#roi">Real-World ROI</a></li>
+        <li><a href="#pitfalls">Common Pitfalls</a></li>
+        <li><a href="#start">Getting Started Today</a></li>
+    </ol>
+</nav>
+
+<!-- SECTION 1 -->
+<section id="what-is" class="guide-section">
+    <h2>What Is an <span class="gradient-text">AI Automation Stack</span>?</h2>
+    <p>An <strong>AI automation stack</strong> is a curated collection of tools, models, and workflows that work together to automate repetitive tasks, amplify human decision-making, and scale output without scaling headcount.</p>
+    <p>Unlike a single AI tool doing isolated tasks, a stack is <strong>systematic</strong> — each layer feeds into the next, creating a flywheel of efficiency:</p>
+    <pre>Input → AI Processing → Automated Workflow → Output → Analytics → Optimization → Repeat</pre>
+    <div class="callout">
+        <h4>Why 2026 Is the Year to Build Your Stack</h4>
+        <ul>
+            <li>AI tool maturity has crossed the "actually useful" threshold</li>
+            <li>Integration between tools has dramatically improved</li>
+            <li>Costs have dropped 10–100x compared to 2024</li>
+            <li>Open-source alternatives now rival commercial products in many areas</li>
+        </ul>
+    </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="5-layer" class="guide-section">
+    <h2>The <span class="gradient-text">5-Layer</span> AI Automation Stack</h2>
+    <pre>Layer 5: 📊 Analytics & Optimization
+Layer 4: 📝 Content Creation & Marketing
+Layer 3: 🗄️ Data & Knowledge Management
+Layer 2: ⚡ Workflow Orchestration
+Layer 1: 🧠 AI Assistants & Agents</pre>
+    <p>Each layer is independent but <strong>compounds the value</strong> of layers below it.</p>
+</section>
+
+<!-- SECTION 3: Layer 1 -->
+<section id="layer1" class="guide-section">
+    <h2>Layer 1: <span class="gradient-text">AI Assistants & Agents</span></h2>
+    <p><em>Purpose: The intelligence layer that powers everything above it.</em></p>
+
+    <h3>Large Language Models (LLMs)</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Best For</th><th>Pricing</th><th>Key Strength</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Claude</strong> (Anthropic)</td><td>Complex reasoning, long context</td><td>$20–200/mo</td><td>Best at following instructions, 200K context</td></tr>
+                <tr><td><strong>ChatGPT / GPT-4o</strong> (OpenAI)</td><td>General purpose, integrations</td><td>$20–200/mo</td><td>Largest ecosystem, most plugins</td></tr>
+                <tr><td><strong>Gemini</strong> (Google)</td><td>Deep research, Google integration</td><td>Free–$200/mo</td><td>Best web search, real-time data</td></tr>
+                <tr><td><strong>Grok</strong> (xAI)</td><td>Real-time information</td><td>$30/mo</td><td>Live X/Twitter data</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="callout">
+        <h4>💡 Recommendation</h4>
+        <p>Start with ChatGPT Plus ($20/mo) + Claude ($20/mo) for a powerful $40/mo dual-model setup. The different models excel in different areas and serve as a quality check on each other.</p>
+    </div>
+
+    <h3>AI Agent Platforms</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Platform</th><th>Type</th><th>Pricing</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Make</strong> (Integromat)</td><td>No-code automation</td><td>Free–$29/mo</td><td>Visual workflow builder, best for non-technical users</td></tr>
+                <tr><td><strong>n8n</strong></td><td>Open-source</td><td>Free (self-hosted)</td><td>Technical teams who want full control</td></tr>
+                <tr><td><strong>Zapier</strong></td><td>No-code automation</td><td>$20–69/mo</td><td>Largest app ecosystem, easiest to start</td></tr>
+                <tr><td><strong>FlowiseAI</strong></td><td>LLM app builder</td><td>Open-source</td><td>Building custom AI agents with LangChain</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>Cost: $40–60/mo combined</strong></p>
+</section>
+
+<!-- SECTION 4: Layer 2 -->
+<section id="layer2" class="guide-section">
+    <h2>Layer 2: <span class="gradient-text">Workflow Orchestration</span></h2>
+    <p><em>Purpose: Connect your AI tools to your business processes and automate repetitive operations.</em></p>
+
+    <h3>Automation Platforms</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Why It Matters</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Zapier</strong></td><td>From $20/mo</td><td>7,000+ app integrations. The "glue" of automation.</td></tr>
+                <tr><td><strong>Make (Integromat)</strong></td><td>Free–$10.50/mo pro</td><td>Visual builder, more complex workflows. Better price-performance.</td></tr>
+                <tr><td><strong>n8n</strong></td><td>Free (self-hosted)</td><td>Open-source Node.js. Total control. Best for technical teams.</td></tr>
+                <tr><td><strong>Pipedream</strong></td><td>Free tier</td><td>Developer-focused, great API integrations</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Essential Workflow Templates</h3>
+
+    <h4>1. Lead Capture & Qualification</h4>
+    <pre>Webform → AI Analysis → CRM Entry → Email Sequence → Slack Notification</pre>
+    <p><em>Time saved: 5–10 hours/week</em></p>
+
+    <h4>2. Content Pipeline</h4>
+    <pre>Topic Research → AI Outline → Content Generation → Grammar Check → CMS Publish → Social Share</pre>
+    <p><em>Time saved: 15+ hours/article</em></p>
+
+    <h4>3. Customer Support Triage</h4>
+    <pre>Inquiry → AI Classification → Auto-Response or Human Escalation → Ticket Update → Knowledge Base</pre>
+    <p><em>Time saved: 3–7 hours/day</em></p>
+
+    <h3>Project & Task Management</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>AI Features</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Notion AI</strong></td><td>$10/mo add-on</td><td>AI writing, summarization, Q&A on workspace</td></tr>
+                <tr><td><strong>ClickUp AI</strong></td><td>$7/mo add-on</td><td>AI writing, project management automation</td></tr>
+                <tr><td><strong>Linear</strong></td><td>$8–12/mo</td><td>Best for dev teams, AI-assisted descriptions</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 5: Layer 3 -->
+<section id="layer3" class="guide-section">
+    <h2>Layer 3: <span class="gradient-text">Data & Knowledge Management</span></h2>
+    <p><em>Purpose: Store, organize, and make your data accessible to your AI tools.</em></p>
+
+    <h3>Knowledge Base & Documents</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Best Feature</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Notion</strong></td><td>Free–$15/mo</td><td>All-in-one workspace, AI-powered search</td></tr>
+                <tr><td><strong>Obsidian</strong></td><td>Free (personal)</td><td>Local-first, great for knowledge connections</td></tr>
+                <tr><td><strong>Google Workspace</strong></td><td>$6–18/mo</td><td>Collaboration, Gemini integration</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Database & CRM</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>AI Integration</th></tr></thead>
+            <tbody>
+                <tr><td><strong>HubSpot</strong></td><td>Free–$450/mo</td><td>AI lead scoring, content suggestions</td></tr>
+                <tr><td><strong>Airtable</strong></td><td>Free–$45/mo</td><td>AI-powered fields, automations</td></tr>
+                <tr><td><strong>Pipedrive</strong></td><td>$14–99/mo</td><td>AI sales assistant, pipeline management</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 6: Layer 4 -->
+<section id="layer4" class="guide-section">
+    <h2>Layer 4: <span class="gradient-text">Content Creation & Marketing</span></h2>
+    <p><em>Purpose: Produce, distribute, and optimize content at scale using AI.</em></p>
+
+    <h3>SEO & Research</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Why It's Essential</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Semrush</strong></td><td>$129.95/mo</td><td>All-in-one SEO. Competitor analysis, keyword research</td></tr>
+                <tr><td><strong>Ahrefs</strong></td><td>$99–999/mo</td><td>Best backlink analysis, keyword data</td></tr>
+                <tr><td><strong>Surfer SEO</strong></td><td>$59–199/mo</td><td>AI-powered content optimization</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Content Generation & Writing</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Jasper AI</strong></td><td>$49–149/mo</td><td>Long-form content, brand voice</td></tr>
+                <tr><td><strong>Copy.ai</strong></td><td>Free–$49/mo</td><td>Marketing copy, social media</td></tr>
+                <tr><td><strong>Grammarly</strong></td><td>Free–$12/mo</td><td>Writing polish, tone adjustment</td></tr>
+                <tr><td><strong>Pictory</strong></td><td>$23–79/mo</td><td>Text-to-video generation</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Email Marketing & Social Media</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td><strong>ConvertKit</strong></td><td>Free–$59/mo</td><td>Creators, AI subject lines</td></tr>
+                <tr><td><strong>ActiveCampaign</strong></td><td>$15–149/mo</td><td>Marketing automation + CRM</td></tr>
+                <tr><td><strong>Buffer</strong></td><td>Free–$12/ch</td><td>Social media scheduling, AI writing</td></tr>
+                <tr><td><strong>Beehiiv</strong></td><td>Free–$99/mo</td><td>Newsletter-first, built-in ad network</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 7: Layer 5 -->
+<section id="layer5" class="guide-section">
+    <h2>Layer 5: <span class="gradient-text">Analytics &amp; Optimization</span></h2>
+    <p><em>Purpose: Measure what matters and continuously improve your automated workflows.</em></p>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Tool</th><th>Pricing</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Google Analytics 4</strong></td><td>Free</td><td>Web analytics, conversion tracking</td></tr>
+                <tr><td><strong>Hotjar</strong></td><td>Free–$59/mo</td><td>Heatmaps, session recordings</td></tr>
+                <tr><td><strong>Plausible</strong></td><td>$9–19/mo</td><td>Privacy-friendly analytics</td></tr>
+                <tr><td><strong>Vercel Analytics</strong></td><td>Free</td><td>Web performance monitoring</td></tr>
+                <tr><td><strong>UptimeRobot</strong></td><td>Free–$10/mo</td><td>Uptime monitoring</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 8: Stack Templates -->
+<section id="templates" class="guide-section">
+    <h2>Pre-Built <span class="gradient-text">Stack Templates</span></h2>
+
+    <div class="stack-card solopreneur">
+        <h3>🏠 Freelancer / Solo Founder Stack</h3>
+        <div class="price">~$75–100/mo</div>
+        <div class="stack-tool"><span class="emoji">🧠</span><div><div class="tool-name">ChatGPT Plus + Claude</div><div class="tool-detail">$40/mo — Core AI intelligence</div></div></div>
+        <div class="stack-tool"><span class="emoji">⚡</span><div><div class="tool-name">Zapier</div><div class="tool-detail">$20/mo — Basic plan for automations</div></div></div>
+        <div class="stack-tool"><span class="emoji">📝</span><div><div class="tool-name">Notion AI</div><div class="tool-detail">$10/mo — Workspace & documentation</div></div></div>
+        <div class="stack-tool"><span class="emoji">📊</span><div><div class="tool-name">Google Analytics 4</div><div class="tool-detail">Free — Web analytics</div></div></div>
+        <div class="stack-tool"><span class="emoji">📧</span><div><div class="tool-name">ConvertKit</div><div class="tool-detail">Free tier — Email marketing</div></div></div>
+    </div>
+
+    <div class="stack-card business">
+        <h3>🏢 Small Business Stack</h3>
+        <div class="price">~$200–300/mo</div>
+        <div class="stack-tool"><span class="emoji">🧠</span><div><div class="tool-name">ChatGPT Team + Claude</div><div class="tool-detail">$45/mo — Team AI intelligence</div></div></div>
+        <div class="stack-tool"><span class="emoji">⚡</span><div><div class="tool-name">Make</div><div class="tool-detail">$20.50/mo — Complex workflow builder</div></div></div>
+        <div class="stack-tool"><span class="emoji">📝</span><div><div class="tool-name">Jasper AI</div><div class="tool-detail">$49–149/mo — Content generation</div></div></div>
+        <div class="stack-tool"><span class="emoji">📊</span><div><div class="tool-name">HubSpot (Free tier to start)</div><div class="tool-detail">CRM + marketing automation</div></div></div>
+        <div class="stack-tool"><span class="emoji">📧</span><div><div class="tool-name">ActiveCampaign</div><div class="tool-detail">$29/mo — Email automation</div></div></div>
+        <div class="stack-tool"><span class="emoji">🔍</span><div><div class="tool-name">Semrush</div><div class="tool-detail">$129.95/mo — SEO suite</div></div></div>
+        <div class="stack-tool"><span class="emoji">📹</span><div><div class="tool-name">Pictory</div><div class="tool-detail">$23/mo — Video content</div></div></div>
+    </div>
+
+    <div class="stack-card enterprise">
+        <h3>🚀 SaaS / Agency Stack</h3>
+        <div class="price">~$400–600/mo</div>
+        <div class="stack-tool"><span class="emoji">🧠</span><div><div class="tool-name">ChatGPT Enterprise + Claude Pro</div><div class="tool-detail">Max AI capabilities</div></div></div>
+        <div class="stack-tool"><span class="emoji">⚡</span><div><div class="tool-name">n8n (self-hosted) + Make</div><div class="tool-detail">Free + $50.50/mo — Full automation</div></div></div>
+        <div class="stack-tool"><span class="emoji">📝</span><div><div class="tool-name">Jasper AI + Copy.ai</div><div class="tool-detail">$49–149/mo + $49/mo — Content</div></div></div>
+        <div class="stack-tool"><span class="emoji">📊</span><div><div class="tool-name">HubSpot Professional</div><div class="tool-detail">$450/mo — Full CRM + marketing</div></div></div>
+        <div class="stack-tool"><span class="emoji">🎯</span><div><div class="tool-name">Surfer SEO</div><div class="tool-detail">$129/mo — Content optimization</div></div></div>
+        <div class="stack-tool"><span class="emoji">🐙</span><div><div class="tool-name">GitHub Copilot</div><div class="tool-detail">$100/mo — Developer AI</div></div></div>
+    </div>
+</section>
+
+<!-- SECTION 9: ROI -->
+<section id="roi" class="guide-section">
+    <h2>Real-World <span class="gradient-text">ROI</span></h2>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Metric</th><th>Without Stack</th><th>With Stack</th><th>Improvement</th></tr></thead>
+            <tbody>
+                <tr><td>Content Production</td><td>2 articles/week</td><td>8+ articles/week</td><td><strong>4x faster</strong></td></tr>
+                <tr><td>Customer Response</td><td>4–6 hours</td><td>Under 15 min</td><td><strong>96% faster</strong></td></tr>
+                <tr><td>Lead Qualification</td><td>Manual (2 hrs/wk)</td><td>Automated + AI scored</td><td><strong>100% faster</strong></td></tr>
+                <tr><td>Email Marketing</td><td>5 hrs/week</td><td>1 hr/week</td><td><strong>80% time savings</strong></td></tr>
+                <tr><td>SEO Research</td><td>8 hrs/week</td><td>2 hrs/week</td><td><strong>75% time savings</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout">
+        <h4>Time Saved: ~15–25 hours/week</h4>
+        <p><strong>Value of time at $75/hr: $1,125 – $1,875/week</strong></p>
+        <p>The stack pays for itself in the first week.</p>
+    </div>
+</section>
+
+<!-- SECTION 10: Pitfalls -->
+<section id="pitfalls" class="guide-section">
+    <h2>Common <span class="gradient-text">Pitfalls</span> & How to Avoid Them</h2>
+    <ol style="color: #94a3b8; padding-left: 24px;">
+        <li><strong style="color:#e2e8f0;">Tool Hoarding</strong> — Start with 3–5 essential tools. Add more only when a clear need emerges.</li>
+        <li><strong style="color:#e2e8f0;">Over-Automation</strong> — Keep customer-critical touchpoints human. Automate repetitive tasks, not relationships.</li>
+        <li><strong style="color:#e2e8f0;">No Measurement</strong> — Define success metrics for each tool before implementing. Review monthly.</li>
+        <li><strong style="color:#e2e8f0;">Ignoring Integration Costs</strong> — Budget 4–8 hours for initial setup of each major tool.</li>
+        <li><strong style="color:#e2e8f0;">Skipping the "Why"</strong> — Document the specific problem before choosing a solution.</li>
+    </ol>
+</section>
+
+<!-- SECTION 11: Getting Started -->
+<section id="start" class="guide-section">
+    <h2>Getting Started <span class="gradient-text">Today</span></h2>
+
+    <h3>Your First 3 Steps</h3>
+    <ol style="color: #94a3b8; padding-left: 24px;">
+        <li><strong style="color:#e2e8f0;">Audit your current workload</strong> — List the top 5 time-consuming tasks you do weekly</li>
+        <li><strong style="color:#e2e8f0;">Pick ONE to automate first</strong> — Choose the task that's repetitive, well-defined, and high-volume</li>
+        <li><strong style="color:#e2e8f0;">Start building</strong> — Use the free tier of Make or Zapier to create your first workflow</li>
+    </ol>
+
+    <h3>4-Week Implementation Plan</h3>
+    <div class="table-wrap">
+        <table class="guide-table">
+            <thead><tr><th>Week</th><th>Focus</th><th>Key Deliverables</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Week 1</strong></td><td>Foundation</td><td>AI models setup, automation platform, first automation</td></tr>
+                <tr><td><strong>Week 2</strong></td><td>Content Pipeline</td><td>SEO tools, content templates, editorial calendar</td></tr>
+                <tr><td><strong>Week 3</strong></td><td>Data & Knowledge</td><td>Knowledge base, CRM setup, automated reporting</td></tr>
+                <tr><td><strong>Week 4</strong></td><td>Optimize & Scale</td><td>Performance analysis, A/B testing, SOPs</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="guide-cta">
+    <div class="cta-inner">
+        <h2>Ready to Build Your <span class="gradient-text">AI Automation Stack</span>?</h2>
+        <p>Start with the case studies below to see real results, then pick a stack template above and get started today.</p>
+        <a href="/" class="btn-primary">📊 View Case Studies & Get Started →</a>
+    </div>
+</div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 <a href="/">AUTOMATE.AI</a> — The 5-Layer AI Automation Stack Guide</p>
+        <p style="margin-top: 4px;">Last updated April 2026 · <a href="/">Back to Case Studies</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
